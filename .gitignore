@@ -1,0 +1,39 @@
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+*login*.ini
+*.pem
+*.key
+secrets/
+config/credentials/*.env
+!config/credentials/*.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Data and logs: large or sensitive. Track hashes in data_manifest.json instead.
+data/
+*.csv
+*.parquet
+*.bi5
+*.db
+*.sqlite*
+*.log
+logs/
+!tests/fixtures/**
+
+# Research literature / books (stay local)
+Books/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+*.bin
