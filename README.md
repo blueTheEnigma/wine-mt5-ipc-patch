@@ -11,7 +11,7 @@ compiled extension, and it can be patched in memory with no changes to any
 signed binary.
 
 Full write-up (the reverse-engineering process, disassembly, and how this
-was found): **[link to your Substack post here]**
+was found): **[Poverty Inspired Me to Fix a "Wine Can't Do This" Timeout](https://thetinkerhouse.substack.com/p/wine-cant-do-this)**
 
 ## The problem, in short
 
@@ -57,9 +57,11 @@ mt5.initialize(path=r"C:\Program Files\MetaTrader 5\terminal64.exe", portable=Tr
   `WriteFile`, `ReadFile`) and prints every packet crossing the pipe. Run
   it standalone against your own `terminal64.exe` if you're debugging a
   different MT5 build where offsets or opcodes have shifted:
+
   ```
   wine python.exe dump_core_traffic.py "C:\Program Files\MetaTrader 5\terminal64.exe"
   ```
+
 - **`examples/bridge_server.py`** — a generalized version of a real RPyC
   bridge that loads the patch and exposes `MetaTrader5` over a local
   socket, so a native Linux process can drive it. Included to show the
